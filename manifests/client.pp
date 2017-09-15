@@ -11,7 +11,7 @@ define openvpn::client (
   $dev            = 'tun',
   $ca             = 'ca.crt',
   $cert           = $name,
-  $ns_cert_type   = 'server',
+  $ns_cert_type   = undef,
   $verb           = 3,
   $cipher         = 'AES-192-CBC',
   $compression    = 'lzo',
