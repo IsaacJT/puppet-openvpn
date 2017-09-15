@@ -43,6 +43,7 @@ class openvpn::server (
   $openvpn_dir              = $openvpn::params::openvpn_dir,
   $openvpn_group            = $openvpn::params::openvpn_group,
   $openvpn_user             = $openvpn::params::openvpn_user,
+  $openvpn_bin              = $openvpn::params::openvpn_bin,
 ) inherits openvpn::params {
 
   include openvpn
@@ -71,7 +72,7 @@ class openvpn::server (
   if $tls_auth {
     exec { 'create tls_auth key':
       cwd     => $openvpn_dir,
-      command => 'openvpn --genkey --secret ta.key',
+      command => "${openvpn_bin} --genkey --secret ta.key",
       creates => "${openvpn_dir}/ta.key",
     }
   }

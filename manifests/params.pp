@@ -32,6 +32,7 @@ class openvpn::params {
       $openvpn_user   = 'nobody'
       $openvpn_group  = 'nobody'
       $openssl        = '/usr/bin/openssl'
+      $openvpn_bin    = '/usr/sbin/openvpn'
     }
   }
 
